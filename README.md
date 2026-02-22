@@ -46,7 +46,10 @@
 
    <br>
 
-   - Open the service account and go to the **Keys** tab
+   - Open the service account
+  <img width="500"  alt="image" src="https://github.com/user-attachments/assets/ccc56f8f-55f3-47c1-bb5d-bf74e2630aa5" />
+
+   - Click on the **Keys** tab
 
    <table><tr><td>
    <img width="500" alt="Open service account" src="https://github.com/user-attachments/assets/c517ed72-2f07-46bd-8893-f80ec367b9cd" />
