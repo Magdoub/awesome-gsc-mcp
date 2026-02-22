@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.env
+credentials.json
+token.json
+.DS_Store
+coverage/
