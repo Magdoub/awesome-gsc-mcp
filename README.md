@@ -25,24 +25,42 @@
 npx awesome-gsc-mcp
 ```
 
-That's it. The server starts on stdio and is ready to connect to Claude Desktop or Claude Code. You just need valid Google credentials (see [Authentication Setup](#authentication-setup)).
+That's it. The server starts on stdio and is ready to connect to Claude Desktop or Claude Code. You just need valid Google credentials (see [Installation & Setup](#installation--setup)).
 
 ---
 
 ## Installation & Setup
 
-> **Prerequisite:** Node.js 20 or later is required.
+### 1. Get Google Credentials
 
-### Claude Desktop
+1. Go to [Google Cloud Console](https://console.cloud.google.com/)
+2. Create a project (or select an existing one)
+3. Enable the [Search Console API](https://console.cloud.google.com/apis/library/searchconsole.googleapis.com)
+4. Create credentials:
+   - Go to **IAM & Admin > Service Accounts**
+   - Create a service account and download the JSON key file
+5. Grant access:
+   - Open [Google Search Console](https://search.google.com/search-console/)
+   - Go to **Settings > Users and permissions**
+   - Add the service account email as an **Owner**
 
-Add to your `claude_desktop_config.json`:
+### 2. Configure Your Client
+
+Add to your MCP client config:
+
+| Client | Config file |
+| --- | --- |
+| Claude Desktop | `claude_desktop_config.json` |
+| Claude Code | `.claude/settings.json` |
+| Cursor | `.cursor/mcp.json` |
+| Windsurf | `~/.codeium/windsurf/mcp_config.json` |
 
 ```json
 {
   "mcpServers": {
     "awesome-gsc": {
       "command": "npx",
-      "args": ["awesome-gsc-mcp"],
+      "args": ["-y", "awesome-gsc-mcp"],
       "env": {
         "GOOGLE_APPLICATION_CREDENTIALS": "/path/to/service-account-key.json"
       }
@@ -51,132 +69,70 @@ Add to your `claude_desktop_config.json`:
 }
 ```
 
-### Claude Code
-
-Add to your `.claude/settings.json`:
-
-```json
-{
-  "mcpServers": {
-    "awesome-gsc": {
-      "command": "npx",
-      "args": ["awesome-gsc-mcp"],
-      "env": {
-        "GOOGLE_APPLICATION_CREDENTIALS": "/path/to/service-account-key.json"
-      }
-    }
-  }
-}
-```
-
-### Cursor
-
-Add to `.cursor/mcp.json` in your project root (or `~/.cursor/mcp.json` for global):
-
-```json
-{
-  "mcpServers": {
-    "awesome-gsc": {
-      "command": "npx",
-      "args": ["awesome-gsc-mcp"],
-      "env": {
-        "GOOGLE_APPLICATION_CREDENTIALS": "/path/to/service-account-key.json"
-      }
-    }
-  }
-}
-```
+That's it. Replace `/path/to/service-account-key.json` with the actual path to the key file you downloaded in step 1.
 
 <details>
-<summary><strong>Global install</strong></summary>
+<summary><strong>OAuth (alternative to service account)</strong></summary>
 
-```bash
-npm install -g awesome-gsc-mcp
+If you prefer OAuth for individual use instead of a service account:
 
-# Then run directly:
-awesome-gsc-mcp
+1. In Google Cloud Console, go to **APIs & Services > Credentials**
+2. Click **Create Credentials > OAuth client ID**, select **Desktop app**
+3. Download the client secrets JSON file
+4. Use this env var instead:
+
+```json
+{
+  "env": {
+    "GSC_OAUTH_CLIENT_SECRETS_FILE": "/path/to/client-secrets.json"
+  }
+}
 ```
 
-When using a global install, replace `"command": "npx"` and `"args": ["awesome-gsc-mcp"]` in the config snippets above with `"command": "awesome-gsc-mcp"` and `"args": []`.
+On first run the server opens a browser for authorization. Tokens are cached at `~/.awesome-gsc-mcp/token.json` and auto-refreshed.
 
 </details>
 
 <details>
-<summary><strong>As a project dependency</strong></summary>
+<summary><strong>Other install methods</strong></summary>
+
+**Global install:**
+
+```bash
+npm install -g awesome-gsc-mcp
+```
+
+Then use `"command": "awesome-gsc-mcp"` and `"args": []` in your config.
+
+**As a project dependency:**
 
 ```bash
 npm install awesome-gsc-mcp
 ```
 
-Then reference it in your config with the full path to the binary, e.g.:
+Then use `"command": "node"` and `"args": ["./node_modules/.bin/awesome-gsc-mcp"]` in your config.
+
+**Credentials as env string** (useful for CI/CD):
 
 ```json
 {
-  "command": "node",
-  "args": ["./node_modules/.bin/awesome-gsc-mcp"]
+  "env": {
+    "GOOGLE_SERVICE_ACCOUNT_KEY": "{\"type\":\"service_account\",\"project_id\":\"...\",\"private_key\":\"...\"}"
+  }
 }
 ```
 
 </details>
 
----
-
-## Authentication Setup
-
-> **Prerequisite:** Enable the **Search Console API** in [Google Cloud Console](https://console.cloud.google.com/apis/library/searchconsole.googleapis.com) before proceeding.
-
-The server tries authentication methods in priority order and uses the first one that succeeds.
-
-### Option 1: Service Account (recommended for automation)
-
-1. Go to [Google Cloud Console](https://console.cloud.google.com/) and navigate to **IAM & Admin > Service Accounts**
-2. Create a service account and download the JSON key file
-3. In [Google Search Console](https://search.google.com/search-console/) go to **Settings > Users and permissions** and add the service account email as an owner
-4. Set the environment variable:
-
-```bash
-export GOOGLE_APPLICATION_CREDENTIALS="/path/to/service-account-key.json"
-```
-
 <details>
-<summary><strong>Alternative: pass credentials as a JSON string</strong></summary>
+<summary><strong>Troubleshooting</strong></summary>
 
-Instead of pointing to a file, you can pass the entire service account JSON as an environment variable. This is useful in CI/CD or containerized environments:
-
-```bash
-export GOOGLE_SERVICE_ACCOUNT_KEY='{"type":"service_account","project_id":"...","private_key":"..."}'
-```
-
-When both are set, `GOOGLE_APPLICATION_CREDENTIALS` (file path) takes priority.
-
-</details>
-
-### Option 2: OAuth (for individual use)
-
-1. Go to [Google Cloud Console](https://console.cloud.google.com/) and navigate to **APIs & Services > Credentials**
-2. Click **Create Credentials > OAuth client ID** and select **Desktop app**
-3. Download the client secrets JSON file
-4. Set the environment variable:
-
-```bash
-export GSC_OAUTH_CLIENT_SECRETS_FILE="/path/to/client-secrets.json"
-```
-
-5. On first run, the server opens a browser window for you to authorize access. Tokens are cached at `~/.awesome-gsc-mcp/token.json` and automatically refreshed on subsequent runs.
-
-### Option 3: Auto-detect
-
-Place a `credentials.json` file (either a service account key or OAuth client secrets) in the current working directory. The server inspects the file and detects the type automatically.
-
-<details>
-<summary><strong>Troubleshooting authentication</strong></summary>
-
-| Error | Cause | Fix |
-| --- | --- | --- |
-| `401 Token has been expired or revoked` | OAuth token expired and refresh failed | Delete `~/.awesome-gsc-mcp/token.json` and re-authorize |
-| `403 User does not have sufficient permission` | Service account not added to the property | In Search Console, go to **Settings > Users and permissions** and add the service account email as an **Owner** |
-| `403 Forbidden` with OAuth | OAuth app in "Testing" mode and user not added | In Google Cloud Console, go to **OAuth consent screen** and add the user as a test user, or publish the app |
-| `Could not load the default credentials` | No credentials found | Set `GOOGLE_APPLICATION_CREDENTIALS` or `GSC_OAUTH_CLIENT_SECRETS_FILE`, or place `credentials.json` in the working directory |
+| Error | Fix |
+| --- | --- |
+| `401 Token has been expired or revoked` | Delete `~/.awesome-gsc-mcp/token.json` and re-authorize |
+| `403 User does not have sufficient permission` | Add the service account email as **Owner** in Search Console > Settings > Users and permissions |
+| `403 Forbidden` with OAuth | Add yourself as a test user in Google Cloud Console > OAuth consent screen, or publish the app |
+| `Could not load the default credentials` | Check that `GOOGLE_APPLICATION_CREDENTIALS` points to a valid key file |
 
 </details>
 
