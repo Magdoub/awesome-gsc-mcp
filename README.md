@@ -41,7 +41,7 @@ That's it. The server starts on stdio and is ready to connect to Claude Desktop 
    - Create a service account and download the JSON key file
 5. Grant access:
    - Open [Google Search Console](https://search.google.com/search-console/)
-   - Go to **Settings > Users and permissions**
+   - Go to [**Settings > Users and permissions**](https://search.google.com/search-console/users)
    - Add the service account email as an **Owner**
 
 ### 2. Configure Your Client
@@ -130,7 +130,7 @@ Then use `"command": "node"` and `"args": ["./node_modules/.bin/awesome-gsc-mcp"
 | Error | Fix |
 | --- | --- |
 | `401 Token has been expired or revoked` | Delete `~/.awesome-gsc-mcp/token.json` and re-authorize |
-| `403 User does not have sufficient permission` | Add the service account email as **Owner** in Search Console > Settings > Users and permissions |
+| `403 User does not have sufficient permission` | Add the service account email as **Owner** in Search Console > [Settings > Users and permissions](https://search.google.com/search-console/users) |
 | `403 Forbidden` with OAuth | Add yourself as a test user in Google Cloud Console > OAuth consent screen, or publish the app |
 | `Could not load the default credentials` | Check that `GOOGLE_APPLICATION_CREDENTIALS` points to a valid key file |
 
@@ -140,7 +140,8 @@ Then use `"command": "node"` and `"args": ["./node_modules/.bin/awesome-gsc-mcp"
 
 ## Tool Reference
 
-All 27 tools organized by category:
+<details>
+<summary><strong>All 27 tools organized by category</strong></summary>
 
 ### Property Management (4 tools)
 
@@ -203,6 +204,8 @@ All 27 tools organized by category:
 | --- | --- |
 | `weekly_seo_report` | Full weekly SEO performance report with trends, top movers, and recommendations |
 | `seo_health_check` | Comprehensive health check with a letter grade and prioritized action items |
+
+</details>
 
 ---
 
@@ -322,6 +325,9 @@ What are the top 5 things I should fix on my site right now?
 
 ## Analysis Engine
 
+<details>
+<summary><strong>Built-in SEO analysis beyond raw data</strong></summary>
+
 The server goes beyond raw data with a built-in analysis engine:
 
 - **CTR Benchmarks** -- Compares your click-through rates against industry-average benchmarks by position. Flags pages that underperform and estimates how many additional clicks you could gain.
@@ -330,9 +336,14 @@ The server goes beyond raw data with a built-in analysis engine:
 - **Opportunity Scoring** -- Scores every opportunity by traffic impact potential, factoring in impressions, CTR gap, position proximity, and volume.
 - **Recommendation Engine** -- Generates specific, prioritized recommendations based on the data patterns found in your property.
 
+</details>
+
 ---
 
 ## API Limitations
+
+<details>
+<summary><strong>What's not available through the API</strong></summary>
 
 The Google Search Console API has known limitations. The following data is **not available** through the API and therefore not provided by this server:
 
@@ -345,9 +356,14 @@ The Google Search Console API has known limitations. The following data is **not
 
 These reports are only available in the Search Console web interface.
 
+</details>
+
 ---
 
 ## HTTP Transport
+
+<details>
+<summary><strong>Using HTTP instead of stdio</strong></summary>
 
 For environments that prefer HTTP over stdio, start the server with the `--http` flag:
 
@@ -368,9 +384,14 @@ Endpoints:
 | `/mcp` | POST | MCP protocol endpoint (Streamable HTTP transport) |
 | `/health` | GET | Health check -- returns `{"status":"ok","auth":"..."}` |
 
+</details>
+
 ---
 
 ## FAQ
+
+<details>
+<summary><strong>Common questions</strong></summary>
 
 **How often does GSC data update?**
 Search Console data typically has a 2–3 day delay. For settled, final numbers pass `dataState: 'final'` in your search analytics queries. The most recent 2–3 days may still change as Google processes data.
@@ -387,9 +408,14 @@ Domain properties use the `sc-domain:example.com` format. This covers all subdom
 **What data is NOT available through the API?**
 See the [API Limitations](#api-limitations) section. Core Web Vitals, crawl stats, links, manual actions, and removals are only available in the Search Console web interface.
 
+</details>
+
 ---
 
 ## Development
+
+<details>
+<summary><strong>Build, test, and run locally</strong></summary>
 
 ```bash
 # Install dependencies
@@ -414,27 +440,7 @@ npm start
 npm start -- --http
 ```
 
----
-
-## vs Competitors
-
-| Feature | awesome-gsc-mcp | Basic GSC MCP servers |
-| --- | :---: | :---: |
-| Raw search analytics | Yes | Yes |
-| CTR benchmark analysis | Yes | No |
-| Quick win detection | Yes | No |
-| Declining content alerts | Yes | No |
-| Content gap analysis | Yes | No |
-| Intent-based content planning | Yes | No |
-| Query cannibalization detection | Yes | No |
-| Composite SEO reports | Yes | No |
-| Trend detection | Yes | No |
-| Opportunity scoring | Yes | No |
-| Recommendation engine | Yes | No |
-| OAuth + Service Account auth | Yes | Varies |
-| HTTP transport | Yes | Rare |
-| Caching + rate limiting | Yes | Rare |
-| Total tools | 27 | 5-10 |
+</details>
 
 ---
 
