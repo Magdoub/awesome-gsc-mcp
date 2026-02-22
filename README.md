@@ -63,7 +63,8 @@
    - Click **Add Key > Create New Key** and select JSON
 
    <table><tr><td>
-   <img width="600" alt="Add key menu" src="https://github.com/user-attachments/assets/ca62cdda-7008-43d9-bc14-fb379206ff49" />
+   <img width="600" alt="Add key menu" src="https://github.com/user-attachments/assets/e1d91457-b770-4d3a-83e5-9f9b8d11199c" />
+
    </td></tr></table>
 
    <br>
