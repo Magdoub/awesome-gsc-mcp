@@ -36,9 +36,19 @@ That's it. The server starts on stdio and is ready to connect to Claude Desktop 
 1. Go to [Google Cloud Console](https://console.cloud.google.com/)
 2. Create a project (or select an existing one)
 3. Enable the [Search Console API](https://console.cloud.google.com/apis/library/searchconsole.googleapis.com)
+   <img width="300" height="" alt="image" src="https://github.com/user-attachments/assets/8644a873-d40c-4a3f-a8cf-c9f742866623" />
+
 4. Create credentials:
    - Go to **IAM & Admin > Service Accounts**
-   - Create a service account and download the JSON key file
+   - Create a service account, name it anything click continue
+   - Open the service account
+   - Click on Keys, Click on "Add Key -> Create New Key"
+   - Download the JSON key file
+  <img width="500" height="" alt="image" src="https://github.com/user-attachments/assets/2474e4a0-51d4-439d-92a2-f30591f6843c" />
+  <img width="500" height="" alt="image" src="https://github.com/user-attachments/assets/c517ed72-2f07-46bd-8893-f80ec367b9cd" />
+  <img width="500" height="" alt="image" src="https://github.com/user-attachments/assets/ca62cdda-7008-43d9-bc14-fb379206ff49" />
+  <img width="500" height="594" alt="image" src="https://github.com/user-attachments/assets/30d4cedf-82c5-4ab7-b624-f9ff3d0b92ce" />
+
 5. Grant access:
    - Open [Google Search Console](https://search.google.com/search-console/)
    - Go to [**Settings > Users and permissions**](https://search.google.com/search-console/users)
