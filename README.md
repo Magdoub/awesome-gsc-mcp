@@ -93,6 +93,11 @@ claude mcp add awesome-gsc -- npx -y awesome-gsc-mcp \
   -e GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account-key.json
 ```
 
+> **Tip:** Can't find your key file? Run this to locate it:
+> ```bash
+> claude -p "find the most recently downloaded .json file in ~/Desktop, ~/Documents, and ~/Downloads"
+> ```
+
 <details>
 <summary><strong>Claude Desktop</strong></summary>
 
