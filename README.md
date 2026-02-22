@@ -40,7 +40,7 @@ Add to your `claude_desktop_config.json`:
 ```json
 {
   "mcpServers": {
-    "gsc": {
+    "awesome-gsc": {
       "command": "npx",
       "args": ["awesome-gsc-mcp"],
       "env": {
@@ -58,7 +58,25 @@ Add to your `.claude/settings.json`:
 ```json
 {
   "mcpServers": {
-    "gsc": {
+    "awesome-gsc": {
+      "command": "npx",
+      "args": ["awesome-gsc-mcp"],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "/path/to/service-account-key.json"
+      }
+    }
+  }
+}
+```
+
+### Cursor
+
+Add to `.cursor/mcp.json` in your project root (or `~/.cursor/mcp.json` for global):
+
+```json
+{
+  "mcpServers": {
+    "awesome-gsc": {
       "command": "npx",
       "args": ["awesome-gsc-mcp"],
       "env": {
