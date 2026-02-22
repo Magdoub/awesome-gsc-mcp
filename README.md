@@ -86,14 +86,19 @@ That's it. The server starts on stdio and is ready to connect to Claude Desktop 
 
 ### 2. Configure Your Client
 
-Add to your MCP client config:
+**Claude Code**
 
-| Client | Config file |
-| --- | --- |
-| Claude Desktop | `claude_desktop_config.json` |
-| Claude Code | `.claude/settings.json` |
-| Cursor | `.cursor/mcp.json` |
-| Windsurf | `~/.codeium/windsurf/mcp_config.json` |
+```bash
+claude mcp add awesome-gsc -- npx -y awesome-gsc-mcp \
+  -e GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account-key.json
+```
+
+<details>
+<summary><strong>Claude Desktop</strong></summary>
+
+Config file location:
+- macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- Windows: `%APPDATA%\Claude\claude_desktop_config.json`
 
 ```json
 {
@@ -109,7 +114,51 @@ Add to your MCP client config:
 }
 ```
 
-That's it. Replace `/path/to/service-account-key.json` with the actual path to the key file you downloaded in step 1.
+</details>
+
+<details>
+<summary><strong>Cursor</strong></summary>
+
+Config file: `.cursor/mcp.json` in your project root (or `~/.cursor/mcp.json` globally)
+
+```json
+{
+  "mcpServers": {
+    "awesome-gsc": {
+      "command": "npx",
+      "args": ["-y", "awesome-gsc-mcp"],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "/path/to/service-account-key.json"
+      }
+    }
+  }
+}
+```
+
+</details>
+
+<details>
+<summary><strong>Windsurf</strong></summary>
+
+Config file: `~/.codeium/windsurf/mcp_config.json`
+
+```json
+{
+  "mcpServers": {
+    "awesome-gsc": {
+      "command": "npx",
+      "args": ["-y", "awesome-gsc-mcp"],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "/path/to/service-account-key.json"
+      }
+    }
+  }
+}
+```
+
+</details>
+
+Replace `/path/to/service-account-key.json` with the actual path to the key file you downloaded in step 1.
 
 <details>
 <summary><strong>OAuth (alternative to service account)</strong></summary>
