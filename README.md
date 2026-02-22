@@ -19,14 +19,6 @@
 
 ---
 
-## Quick Start
-
-```bash
-npx awesome-gsc-mcp
-```
-
-That's it. The server starts on stdio and is ready to connect to Claude Desktop or Claude Code. You just need valid Google credentials (see [Installation & Setup](#installation--setup)).
-
 ---
 
 ## Installation & Setup
