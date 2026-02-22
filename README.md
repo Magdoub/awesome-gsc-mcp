@@ -44,8 +44,9 @@ That's it. The server starts on stdio and is ready to connect to Claude Desktop 
    <br>
 
 4. Create credentials:
-   - Go to **IAM & Admin > Service Accounts**
-   - Create a service account, name it anything, click continue
+   - Go to **the project you created**
+   - Click on Credentials in the sidebar
+   -  Create a service account, name it anything, click continue
 
    <table><tr><td>
    <img width="500" alt="Create service account" src="https://github.com/user-attachments/assets/2474e4a0-51d4-439d-92a2-f30591f6843c" />
