@@ -26,7 +26,7 @@
 ### 1. Get Google Credentials
 
 1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Create a project (or select an existing one)
+2. Create [a new project](https://console.cloud.google.com/projectcreate) (or select an existing one)
 3. Enable the [Search Console API](https://console.cloud.google.com/apis/library/searchconsole.googleapis.com)
 
    <table><tr><td>
