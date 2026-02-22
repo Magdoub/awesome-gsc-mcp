@@ -60,7 +60,7 @@
 
    <br>
 
-   - Click **Add Key > Create New Key** and select JSON — save it somewhere you'll remember
+   - Click **Add Key > Create New Key** and select JSON. Save it somewhere familiar and try to rename it to something searchable (e.g. `awesome-gsc-service-account.json`)
 
    <table><tr><td>
    <img width="600" alt="Add key menu" src="https://github.com/user-attachments/assets/e1d91457-b770-4d3a-83e5-9f9b8d11199c" />
