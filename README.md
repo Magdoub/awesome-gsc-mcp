@@ -19,8 +19,6 @@
 
 ---
 
----
-
 ## Installation & Setup
 
 ### 1. Get Google Credentials
@@ -30,7 +28,7 @@
 3. Enable the [Search Console API](https://console.cloud.google.com/apis/library/searchconsole.googleapis.com)
 
    <table><tr><td>
-   <img width="300" alt="Enable Search Console API" src="https://github.com/user-attachments/assets/8644a873-d40c-4a3f-a8cf-c9f742866623" />
+   <img width="600" alt="Enable Search Console API" src="https://github.com/user-attachments/assets/8644a873-d40c-4a3f-a8cf-c9f742866623" />
    </td></tr></table>
 
    <br>
@@ -41,18 +39,23 @@
    -  Create a service account, name it anything, click continue
 
    <table><tr><td>
-   <img width="500" alt="Create service account" src="https://github.com/user-attachments/assets/2474e4a0-51d4-439d-92a2-f30591f6843c" />
+   <img width="600" alt="Create service account" src="https://github.com/user-attachments/assets/2474e4a0-51d4-439d-92a2-f30591f6843c" />
    </td></tr></table>
 
    <br>
 
    - Open the service account
-  <img width="500"  alt="image" src="https://github.com/user-attachments/assets/ccc56f8f-55f3-47c1-bb5d-bf74e2630aa5" />
+
+   <table><tr><td>
+   <img width="600" alt="Open service account" src="https://github.com/user-attachments/assets/ccc56f8f-55f3-47c1-bb5d-bf74e2630aa5" />
+   </td></tr></table>
+
+   <br>
 
    - Click on the **Keys** tab
 
    <table><tr><td>
-   <img width="500" alt="Open service account" src="https://github.com/user-attachments/assets/c517ed72-2f07-46bd-8893-f80ec367b9cd" />
+   <img width="600" alt="Keys tab" src="https://github.com/user-attachments/assets/c517ed72-2f07-46bd-8893-f80ec367b9cd" />
    </td></tr></table>
 
    <br>
@@ -60,13 +63,13 @@
    - Click **Add Key > Create New Key** and select JSON
 
    <table><tr><td>
-   <img width="500" alt="Add key menu" src="https://github.com/user-attachments/assets/ca62cdda-7008-43d9-bc14-fb379206ff49" />
+   <img width="600" alt="Add key menu" src="https://github.com/user-attachments/assets/ca62cdda-7008-43d9-bc14-fb379206ff49" />
    </td></tr></table>
 
    <br>
 
    <table><tr><td>
-   <img width="500" alt="Download JSON key" src="https://github.com/user-attachments/assets/30d4cedf-82c5-4ab7-b624-f9ff3d0b92ce" />
+   <img width="600" alt="Download JSON key" src="https://github.com/user-attachments/assets/30d4cedf-82c5-4ab7-b624-f9ff3d0b92ce" />
    </td></tr></table>
 
 5. Grant access:
@@ -75,7 +78,7 @@
    - Add the service account email as an **Owner** or **Full**
 
    <table><tr><td>
- <img width="500" height="459" alt="Add service account to Search Console" src="https://github.com/user-attachments/assets/a2847ae9-e980-445c-a1ed-26d3c68b4d27" />
+   <img width="600" alt="Add service account to Search Console" src="https://github.com/user-attachments/assets/a2847ae9-e980-445c-a1ed-26d3c68b4d27" />
 
    </td></tr></table>
 
