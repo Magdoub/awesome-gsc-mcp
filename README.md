@@ -77,7 +77,9 @@ That's it. The server starts on stdio and is ready to connect to Claude Desktop 
 5. Grant access:
    - Open [Google Search Console](https://search.google.com/search-console/)
    - Go to [**Settings > Users and permissions**](https://search.google.com/search-console/users)
-   - Add the service account email as an **Owner**
+   - Add the service account email as an **Owner** or **Full**
+  <img width="500" alt="image" src="https://github.com/user-attachments/assets/8a2f6cc8-1f76-45f8-b52f-4407e9ca530e" />
+
 
 ### 2. Configure Your Client
 
