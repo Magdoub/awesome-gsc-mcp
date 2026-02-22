@@ -80,7 +80,8 @@ That's it. The server starts on stdio and is ready to connect to Claude Desktop 
    - Add the service account email as an **Owner** or **Full**
 
    <table><tr><td>
-   <img width="500" alt="Add service account to Search Console" src="https://github.com/user-attachments/assets/8a2f6cc8-1f76-45f8-b52f-4407e9ca530e" />
+ <img width="500" height="459" alt="Add service account to Search Console" src="https://github.com/user-attachments/assets/a2847ae9-e980-445c-a1ed-26d3c68b4d27" />
+
    </td></tr></table>
 
 ### 2. Configure Your Client
