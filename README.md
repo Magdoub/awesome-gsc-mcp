@@ -162,61 +162,6 @@ Config file: `~/.codeium/windsurf/mcp_config.json`
 
 </details>
 
-Replace `/path/to/service-account-key.json` with the actual path to the key file you downloaded in step 1.
-
-<details>
-<summary><strong>OAuth (alternative to service account)</strong></summary>
-
-If you prefer OAuth for individual use instead of a service account:
-
-1. In Google Cloud Console, go to **APIs & Services > Credentials**
-2. Click **Create Credentials > OAuth client ID**, select **Desktop app**
-3. Download the client secrets JSON file
-4. Use this env var instead:
-
-```json
-{
-  "env": {
-    "GSC_OAUTH_CLIENT_SECRETS_FILE": "/path/to/client-secrets.json"
-  }
-}
-```
-
-On first run the server opens a browser for authorization. Tokens are cached at `~/.awesome-gsc-mcp/token.json` and auto-refreshed.
-
-</details>
-
-<details>
-<summary><strong>Other install methods</strong></summary>
-
-**Global install:**
-
-```bash
-npm install -g awesome-gsc-mcp
-```
-
-Then use `"command": "awesome-gsc-mcp"` and `"args": []` in your config.
-
-**As a project dependency:**
-
-```bash
-npm install awesome-gsc-mcp
-```
-
-Then use `"command": "node"` and `"args": ["./node_modules/.bin/awesome-gsc-mcp"]` in your config.
-
-**Credentials as env string** (useful for CI/CD):
-
-```json
-{
-  "env": {
-    "GOOGLE_SERVICE_ACCOUNT_KEY": "{\"type\":\"service_account\",\"project_id\":\"...\",\"private_key\":\"...\"}"
-  }
-}
-```
-
-</details>
-
 <details>
 <summary><strong>Troubleshooting</strong></summary>
 
