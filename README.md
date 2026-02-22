@@ -60,7 +60,7 @@
 
    <br>
 
-   - Click **Add Key > Create New Key** and select JSON
+   - Click **Add Key > Create New Key** and select JSON — save it somewhere you'll remember
 
    <table><tr><td>
    <img width="600" alt="Add key menu" src="https://github.com/user-attachments/assets/e1d91457-b770-4d3a-83e5-9f9b8d11199c" />
