@@ -43,65 +43,78 @@ Just ask it to analyze your Google Search Console.
 
 ### 1. Get Google Credentials
 
-1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Create [a new project](https://console.cloud.google.com/projectcreate) (or select an existing one)
-3. Enable the [Search Console API](https://console.cloud.google.com/apis/library/searchconsole.googleapis.com)
+<details>
+<summary><strong>1. Go to Google Cloud Console</strong></summary>
 
-   <table><tr><td>
-   <img width="600" alt="Enable Search Console API" src="https://github.com/user-attachments/assets/8644a873-d40c-4a3f-a8cf-c9f742866623" />
-   </td></tr></table>
+Go to [Google Cloud Console](https://console.cloud.google.com/)
 
-   <br>
+</details>
 
-4. Create credentials:
-   - Go to **the project you created**
-   - Click on Credentials in the sidebar
-   -  Create a service account, name it anything, click continue
+<details>
+<summary><strong>2. Create a new project</strong></summary>
 
-   <table><tr><td>
-   <img width="600" alt="Create service account" src="https://github.com/user-attachments/assets/2474e4a0-51d4-439d-92a2-f30591f6843c" />
-   </td></tr></table>
+Create [a new project](https://console.cloud.google.com/projectcreate) (or select an existing one)
 
-   <br>
+</details>
 
-   - Open the service account
+<details>
+<summary><strong>3. Enable the Search Console API</strong></summary>
 
-   <table><tr><td>
-   <img width="600" alt="Open service account" src="https://github.com/user-attachments/assets/ccc56f8f-55f3-47c1-bb5d-bf74e2630aa5" />
-   </td></tr></table>
+Enable the [Search Console API](https://console.cloud.google.com/apis/library/searchconsole.googleapis.com)
 
-   <br>
+<table><tr><td>
+<img width="600" alt="Enable Search Console API" src="https://github.com/user-attachments/assets/8644a873-d40c-4a3f-a8cf-c9f742866623" />
+</td></tr></table>
 
-   - Click on the **Keys** tab
+</details>
 
-   <table><tr><td>
-   <img width="600" alt="Keys tab" src="https://github.com/user-attachments/assets/c517ed72-2f07-46bd-8893-f80ec367b9cd" />
-   </td></tr></table>
+<details>
+<summary><strong>4. Create credentials</strong></summary>
 
-   <br>
+- Go to **the project you created**
+- Click on Credentials in the sidebar
+- Create a service account, name it anything, click continue
 
-   - Click **Add Key > Create New Key** and select JSON. Save it somewhere familiar and try to rename it to something searchable (e.g. `awesome-gsc-service-account.json`)
+<table><tr><td>
+<img width="600" alt="Create service account" src="https://github.com/user-attachments/assets/2474e4a0-51d4-439d-92a2-f30591f6843c" />
+</td></tr></table>
 
-   <table><tr><td>
-   <img width="600" alt="Add key menu" src="https://github.com/user-attachments/assets/e1d91457-b770-4d3a-83e5-9f9b8d11199c" />
+- Open the service account
 
-   </td></tr></table>
+<table><tr><td>
+<img width="600" alt="Open service account" src="https://github.com/user-attachments/assets/ccc56f8f-55f3-47c1-bb5d-bf74e2630aa5" />
+</td></tr></table>
 
-   <br>
+- Click on the **Keys** tab
 
-   <table><tr><td>
-   <img width="600" alt="Download JSON key" src="https://github.com/user-attachments/assets/30d4cedf-82c5-4ab7-b624-f9ff3d0b92ce" />
-   </td></tr></table>
+<table><tr><td>
+<img width="600" alt="Keys tab" src="https://github.com/user-attachments/assets/c517ed72-2f07-46bd-8893-f80ec367b9cd" />
+</td></tr></table>
 
-5. Grant access:
-   - Open [Google Search Console](https://search.google.com/search-console/)
-   - Go to [**Settings > Users and permissions**](https://search.google.com/search-console/users)
-   - Add the service account email as an **Owner** or **Full**
+- Click **Add Key > Create New Key** and select JSON. Save it somewhere familiar and try to rename it to something searchable (e.g. `awesome-gsc-service-account.json`)
 
-   <table><tr><td>
-   <img width="600" alt="Add service account to Search Console" src="https://github.com/user-attachments/assets/a2847ae9-e980-445c-a1ed-26d3c68b4d27" />
+<table><tr><td>
+<img width="600" alt="Add key menu" src="https://github.com/user-attachments/assets/e1d91457-b770-4d3a-83e5-9f9b8d11199c" />
+</td></tr></table>
 
-   </td></tr></table>
+<table><tr><td>
+<img width="600" alt="Download JSON key" src="https://github.com/user-attachments/assets/30d4cedf-82c5-4ab7-b624-f9ff3d0b92ce" />
+</td></tr></table>
+
+</details>
+
+<details>
+<summary><strong>5. Grant access</strong></summary>
+
+- Open [Google Search Console](https://search.google.com/search-console/)
+- Go to [**Settings > Users and permissions**](https://search.google.com/search-console/users)
+- Add the service account email as an **Owner** or **Full**
+
+<table><tr><td>
+<img width="600" alt="Add service account to Search Console" src="https://github.com/user-attachments/assets/a2847ae9-e980-445c-a1ed-26d3c68b4d27" />
+</td></tr></table>
+
+</details>
 
 ### 2. Configure Your Client
 
