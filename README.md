@@ -107,6 +107,8 @@ Enable the [Search Console API](https://console.cloud.google.com/apis/library/se
 
 ### 2. Configure Your Client
 
+You're almost done. Just point your MCP client to the JSON key file you downloaded in step 4 (Create credentials).
+
 **Claude Code**
 
 ```bash
