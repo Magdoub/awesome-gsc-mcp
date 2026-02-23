@@ -43,19 +43,8 @@ Just ask it to analyze your Google Search Console.
 
 ### 1. Get Google Credentials
 
-<details>
-<summary><strong>1. Go to Google Cloud Console</strong></summary>
-
-Go to [Google Cloud Console](https://console.cloud.google.com/)
-
-</details>
-
-<details>
-<summary><strong>2. Create a new project</strong></summary>
-
-Create [a new project](https://console.cloud.google.com/projectcreate) (or select an existing one)
-
-</details>
+1. Go to [Google Cloud Console](https://console.cloud.google.com/)
+2. Create [a new project](https://console.cloud.google.com/projectcreate) (or select an existing one)
 
 <details>
 <summary><strong>3. Enable the Search Console API</strong></summary>
