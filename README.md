@@ -114,7 +114,7 @@ claude mcp add awesome-gsc -- npx -y awesome-gsc-mcp \
 
 > **Tip:** Can't find your key file? Run this to locate it:
 > ```bash
-> claude -p "find the most recently downloaded .json file in ~/Desktop, ~/Documents, and ~/Downloads"
+> claude -p "find the path of most recently downloaded .json file in ~/Desktop, ~/Documents, and ~/Downloads"
 > ```
 
 <details>
