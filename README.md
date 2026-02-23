@@ -15,14 +15,14 @@ Just ask it to analyze your Google Search Console.
 <table>
 <tr><td>
 <img width="600" alt="Demo video" src="https://github.com/user-attachments/assets/0e726a66-4f9d-4e7a-b4dc-8956a9d0b535" />
-<br><sub>Ask Claude to analyze your Search Console data</sub>
+<br><p align="center"><sub>Ask Claude to analyze your Search Console data</sub></p>
 </td></tr>
 </table>
 
 <table>
 <tr><td>
 <img width="600" alt="Demo output" src="https://github.com/user-attachments/assets/1ab4a543-a01b-42d9-b512-7b5bdc3e0de0" />
-<br><sub>Here's a sample result</sub>
+<br><p align="center"><sub>Here's a sample result</sub></p>
 </td></tr>
 </table>
 
