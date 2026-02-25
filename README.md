@@ -124,22 +124,27 @@ claude mcp add awesome-gsc -- npx -y awesome-gsc-mcp \
 <details>
 <summary><strong>Claude Desktop</strong></summary>
 
-Config file location:
-- macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
-- Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+Paste this whole block into Terminal, hit Enter, then restart Claude Desktop.
 
-```json
+```bash
+cat > ~/Library/Application\ Support/Claude/claude_desktop_config.json << 'EOF'
 {
   "mcpServers": {
     "awesome-gsc": {
       "command": "npx",
       "args": ["-y", "awesome-gsc-mcp"],
       "env": {
-        "GOOGLE_APPLICATION_CREDENTIALS": "/path/to/service-account-key.json"
+        "GOOGLE_APPLICATION_CREDENTIALS": "{Path to your json file}"
       }
     }
   }
 }
+EOF
+```
+
+Here is an example:
+```
+"GOOGLE_APPLICATION_CREDENTIALS": "/Users/Magdoub/Desktop/mobilevitals-service.json"
 ```
 
 </details>
